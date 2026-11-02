@@ -1,25 +1,30 @@
-# Wifi Analyzer 
 # Wifi Analyzer
+A live Wi-Fi network analyzer for Windows. It lists all nearby Wi-Fi networks
+sorted by signal strength and shows them together on a single spectrum screen,
+so you can see at a glance which networks are strong and which are weak.
 
-Windows icin canli Wi-Fi ag analiz programi. Cevredeki tum Wi-Fi aglarini
-sinyal gucune gore listeler ve hepsini tek ekranda guclu/zayif seklinde gosterir.
+## Features
 
-Live Wi-Fi network analyzer for Windows. Lists all nearby Wi-Fi networks by
-signal strength and shows them on a single spectrum screen.
+- Live scanning with networks sorted by signal strength
+- Color-coded signal bars for every network on one screen
+- Click any network to see its channel, MAC address and proximity info
+- Turkish / English language menu (switches instantly)
+- Save scan results as a .txt log file
 
-## Ozellikler / Features
+## Usage
 
-- Canli tarama ve sinyal gucune gore siralama / Live scan, sorted by signal
-- Tum aglar icin renkli sinyal cubugu / Colored signal bars for all networks
-- Secili agin kanal, MAC ve mesafe bilgisi / Channel, MAC and proximity info
-- Turkce / Ingilizce dil menusu / Turkish / English language menu
-- Tarama sonucunu .txt olarak kaydetme / Save scan results as .txt
-
-## Calistirma / Usage
-
-Python 3 gerekli, ek paket gerekmez. / Requires Python 3, no extra packages.
+Requires Python 3 on Windows. No extra packages needed.
 
     python wifi_scanner.py
 
-Not: Windows'ta konum hizmetleri acik olmali ve Wi-Fi adaptoru aktif olmali.
-Note: Location services and the Wi-Fi adapter must be enabled on Windows.
+## Notes
+
+- The Wi-Fi adapter must be turned on.
+- On recent Windows versions, location services must be enabled, otherwise
+  the scan may return no results.
+- Works on Windows only (uses the built-in `netsh` command).
+
+## Build an .exe
+
+    pip install pyinstaller
+    pyinstaller --onefile --noconsole wifi_scanner.py
